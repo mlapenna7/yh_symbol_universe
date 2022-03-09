@@ -1,21 +1,13 @@
 import requests
 import json
-from array import array
-from datetime import datetime
+#from array import array
+#from datetime import datetime
 import logging
-import os
-import argparse
-from html.parser import HTMLParser
-import logging
-from datetime import datetime
-from datetime import timedelta  
-from dateutil.relativedelta import relativedelta
-import time
-import inti_util as inti
-import copy
-import re
+#import os
+#from html.parser import HTMLParser
+#import time
 
-logging.basicConfig(level=logging.DEBUG, filename='yh_data/yh_get_all_sym.log', 
+logging.basicConfig(level=logging.DEBUG, filename='yh_get_all_sym.log', 
     filemode='w', format='%(asctime)s - %(levelname)s - %(message)s')
 
 hdr = {

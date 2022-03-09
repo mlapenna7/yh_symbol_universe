@@ -1,17 +1,29 @@
 # yh_symbol_universe
-Retrieves all the symbols available on Yahoo Finance and stores in a file. 
+Retrieves (almost) all the symbols available on Yahoo Finance and stores them in a file.
+The last time this python program was run, it retrieved over 400,000 symbols. 
+Currently just the ticker symbol and name are retrieved.  
 
 Written in python 3.9.
 
-Currently retrieves just symbol and listing name for each available ticker.
+_Takes a few hours to run._  It's brute force but works.
 
-Takes quite a few hours to run.  It's brute force but works.
+#Running the script
+```
+python yh_get_all_sym.py
+```
 
-Output file name is yhallsym.txt stored in the same folder you launched python script from.
+If you get an error running the script, you *may* need to install python libraries.  
+If so, use `pip install <library name>` .  The only ones I am using are logging and requests.
 
-File format is a python dictionary:
+#Output
+- Tickers are stored in a file with name yhallsym.txt 
+- File is located in the same folder you launched python script from
+- Output file size is about 16MB
+- Console messages are shown while the script is executing
+- Log file is with the console messages is stored in yh_get_all_sym.log
+
+Ticket file (yhallsym.txt) format is structured as a python dictionary:
 { 'ticket1':'name1', 'ticker2':'name2', ... }  
 
-Here 's a sample:
-
-{'BA': 'Boeing Company (The)', 'MA': 'Mastercard Incorporated', 'AAL': 'American Airlines Group, Inc.', 'AA': 'Alcoa Corporation', 'APA': 'APA Corporation', 'AI': 'C3.ai, Inc.', 'AG': 'First Majestic Silver Corp.', 'AR': 'Antero Resources Corporation', 'PAA': 'Plains All American Pipeline, L', 'AU': 'AngloGold Ashanti Limited', 'UA': 'Under Armour, Inc.', 'AM': 'Antero Midstream Corporation', 'AB': 'AllianceBernstein Holding L.P.', 'UAA': 'Under Armour, Inc.', 'EA': 'Electronic Arts Inc.', 'HA': 'Hawaiian Holdings, Inc.', 'A': 'Agilent Technologies, Inc.', 'AAP': 'Advance Auto Parts Inc.', 'AL': 'Air Lease Corporation', 'AY': 'Atlantica Sustainable Infrastru', 'SA': 'Seabridge Gold, Inc.', 'RA': 'Brookfield Real Assets Income F', 'AN': 'AutoNation, Inc.', 'AE': 'Adams Resources & Energy, Inc.', 'AAU': 'Almaden Minerals, Ltd.', 'TA': 'TravelCenters of America Inc.', 'MAA': 'Mid-America Apartment Communiti', 'AIR': 'AAR Corp.', 'AX': 'Axos Financial, Inc.', 'AVA': 'Avista Corporation', 'AKA': 'a.k.a. Brands Holding Corp.', 'AADI': 'Aadi Bioscience, Inc.', 'ASA': 'ASA  Gold and Precious Metals L', 'AAON': 'AAON, Inc.', 'AAC.ST': 'AAC Clyde Space AB', 'AAN': 'Aarons Holdings Company, Inc.', 'IAA': 'IAA, Inc.', 'AAVE-USD': 'Aave USD', 'AOA': 'iShares Core Aggressive Allocat', 'ASME.DE': 'ASML Holding N.V. Aandelen op n', 'ACA': 'Arcosa, Inc.', 'AARTIIND.NS': 'AARTI IND LTD', 'AALB.AS': 'AALBERTS N.V.', '2018.HK': 'AAC TECH', 'AAT': 'American Assets Trust, Inc.', 'AIA': 'iShares Asia 50 ETF', 'AC': 'Associated Capital Group, Inc.', 'AZ': 'A2Z Smart Technologies Corp.', 'AP': 'Ampco-Pittsburgh Corporation', 'ARL.DE': 'Aareal Bank AG Inhaber-Aktien o', 'FA': 'First Advantage Corporation', 'AAC': 'Ares Acquisition Corporation', 'AAA': 'Listed Funds Trust AAF First Pr', 'AAK.ST': 'AAK AB', 'SPDV': 'AAM S&P 500 High Dividend Value', 'AARTIDRUGS.NS': 'AARTI DRUGS LTD', '5238.KL': 'AAX', 'ATA': 'Americas Technology Acquisition', 'SAA': 'ProShares Ultra SmallCap600' }
+#Sample output:
+{'BA': 'Boeing Company (The)', 'MA': 'Mastercard Incorporated', 'AAL': 'American Airlines Group, Inc.', 'AA': 'Alcoa Corporation', 'APA': 'APA Corporation', 'AI': 'C3.ai, Inc.', 'AG': 'First Majestic Silver Corp.', 'AR': 'Antero Resources Corporation', 'PAA': 'Plains All American Pipeline, L', 'AU': 'AngloGold Ashanti Limited', 'UA': 'Under Armour, Inc.', 'AM': 'Antero Midstream Corporation', 'AB': 'AllianceBernstein Holding L.P.', 'UAA': 'Under Armour, Inc.', 'EA': 'Electronic Arts Inc.', 'HA': 'Hawaiian Holdings, Inc.', 'A': 'Agilent Technologies, Inc.'}
